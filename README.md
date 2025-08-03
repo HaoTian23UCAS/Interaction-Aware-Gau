@@ -5,7 +5,7 @@ Our method focuses on a challenging setting of simultaneously modeling geometry 
 * Python (3.8+)
 * PyTorch (2.0.0+)
 * CUDA (11.8)
-'''python / py
+'''python
 conda env create -f environment.yml
 # diff-gaussian-rasterization
 pip install ./submodules/diff-gaussian-rasterization
@@ -15,7 +15,7 @@ pip install ./submodules/simple-knn
 '''
 ---
 ## Run
-'''python / py
+'''python
 conda activate your_env_name
 # train
 CUDA_VISIBLE_DEVICES=0 python train_unify_hoi4d.py --source_path /path/to/your/dataset --model_path /path/to/your/outputs/model --iterations_node_rendering 3000 --iterations_hand_rendering 3000 --iterations_scene_rendering 4000
