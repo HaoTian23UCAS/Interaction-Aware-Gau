@@ -5,6 +5,7 @@ Our method focuses on a challenging setting of simultaneously modeling geometry 
 * Python (3.8+)
 * PyTorch (2.0.0+)
 * CUDA (11.8)
+* Mano (MANO_LEFT.pkl, MANO_RIGHT.pkl) is needed to download from Mano's official website.
 ```bash
 conda env create -f environment.yml
 
