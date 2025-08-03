@@ -20,5 +20,5 @@ conda activate your_env_name
 # train
 CUDA_VISIBLE_DEVICES=0 python train_unify_hoi4d.py --source_path /path/to/your/dataset --model_path /path/to/your/outputs/model --iterations_node_rendering 3000 --iterations_hand_rendering 3000 --iterations_scene_rendering 4000
 # render
-CUDA_VISIBLE_DEVICES=0 python render_unify.py --source_path /path/to/your/dataset --model_path /path/to/your/outputs/model --W 800 --H 800 --gui --mode unify --deform_type node --iteration <best metrices of iteration>
+CUDA_VISIBLE_DEVICES=0 python render_unify.py --source_path /path/to/your/dataset --model_path /path/to/your/outputs/model --W 800 --H 800 --gui --mode unify --deform_type node --iteration <iteration of best metrices>
 ```
