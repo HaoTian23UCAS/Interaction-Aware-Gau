@@ -7,6 +7,7 @@ Our method focuses on a challenging setting of simultaneously modeling geometry 
 * CUDA (11.8)
 ```bash
 conda env create -f environment.yml
+
 # diff-gaussian-rasterization
 pip install ./submodules/diff-gaussian-rasterization
 
