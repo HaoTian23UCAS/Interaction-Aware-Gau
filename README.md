@@ -1,5 +1,5 @@
 # Interaction-Aware 4D Gaussian
-**Our method focuses on a challenging setting of simultaneously modeling geometry and appearance of hand-object interaction (HOI) scenes without any object priors. Our approach achieves high fidelity, physically reality of hand-object interaction, smooth edge transitions and enhance lighting coherence in HOI scenes.**
+Our method focuses on a challenging setting of simultaneously modeling geometry and appearance of hand-object interaction (HOI) scenes without any object priors. Our approach achieves high fidelity, physically realistic hand-object interaction, smooth edge transitions and enhance lighting coherence in HOI scenes.
 ---
 ## Install 
 * Python (3.8+)
