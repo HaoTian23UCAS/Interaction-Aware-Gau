@@ -1,20 +1,26 @@
-﻿<div align="center">
-
-> 馃寪 **Project Page with videos and full results 鈫?[haotian23ucas.github.io/Interaction-Aware-Gau](https://haotian23ucas.github.io/Interaction-Aware-Gau/)**
+<div align="center">
 
 # Interaction-Aware 4D Gaussian Splatting for Dynamic Hand-Object Interaction Reconstruction
 
 **ECCV 2026**
 
-[Hao Tian](https://github.com/HaoTian23UCAS)<sup>1,2,5</sup> 路 Chenyangguang Zhang<sup>3</sup> 路 Rui Liu<sup>4</sup> 路 Wen Shen<sup>1,5</sup> 路 Xiaolin Qin<sup>1,5鉁?/sup>
+[Hao Tian](https://github.com/HaoTian23UCAS)<sup>1,2,5</sup> &middot;
+Chenyangguang Zhang<sup>3</sup> &middot;
+Rui Liu<sup>4</sup> &middot;
+Wen Shen<sup>1,5</sup> &middot;
+Xiaolin Qin<sup>1,5</sup>&#10022;
 
-<sup>1</sup>Chengdu Institute of Computer Applications, CAS 路 <sup>2</sup>PetroChina Digital Intelligence Research Institute 路 <sup>3</sup>Tsinghua University 路 <sup>4</sup>Minzu University of China 路 <sup>5</sup>University of Chinese Academy of Sciences
+<sup>1</sup>Chengdu Institute of Computer Applications, CAS &nbsp;&middot;&nbsp;
+<sup>2</sup>PetroChina Digital Intelligence Research Institute &nbsp;&middot;&nbsp;
+<sup>3</sup>Tsinghua University<br>
+<sup>4</sup>Minzu University of China &nbsp;&middot;&nbsp;
+<sup>5</sup>University of Chinese Academy of Sciences
 
-[![Project Page](https://img.shields.io/badge/馃寪%20Project-Page-blue?style=for-the-badge)](https://haotian23ucas.github.io/Interaction-Aware-Gau/)
-[![Paper](https://img.shields.io/badge/馃搫%20Paper-ECCV%202026-red?style=for-the-badge)](https://haotian23ucas.github.io/Interaction-Aware-Gau/)
-[![arXiv](https://img.shields.io/badge/arXiv-coming%20soon-b31b1b?style=for-the-badge&logo=arxiv)](https://arxiv.org)
+[![Project Page](https://img.shields.io/badge/Project-Page-blue?style=for-the-badge&logo=github)](https://haotian23ucas.github.io/Interaction-Aware-Gau/)
+[![Paper](https://img.shields.io/badge/Paper-ECCV_2026-red?style=for-the-badge)](https://haotian23ucas.github.io/Interaction-Aware-Gau/)
+[![arXiv](https://img.shields.io/badge/arXiv-coming_soon-b31b1b?style=for-the-badge&logo=arxiv)](https://arxiv.org)
 
-### 馃寪 [Project Page](https://haotian23ucas.github.io/Interaction-Aware-Gau/) | 馃搫 [Paper](#bibtex) | 馃幀 [Video](https://haotian23ucas.github.io/Interaction-Aware-Gau/#video)
+**[Project Page](https://haotian23ucas.github.io/Interaction-Aware-Gau/) &nbsp;|&nbsp; [Paper](#bibtex) &nbsp;|&nbsp; [Video](https://haotian23ucas.github.io/Interaction-Aware-Gau/#video)**
 
 </div>
 
@@ -37,21 +43,21 @@
     <tr>
       <td align="center">
         <img src="https://github.com/HaoTian23UCAS/Interaction-Aware-Gau/raw/master/docs/static/media/hoi4d_rgb.gif" width="100%" alt="HOI4D RGB">
-        <br><b>HOI4D 鈥?RGB Rendering</b>
+        <br><b>HOI4D &mdash; RGB Rendering</b>
       </td>
       <td align="center">
         <img src="https://github.com/HaoTian23UCAS/Interaction-Aware-Gau/raw/master/docs/static/media/hoi4d_depth.gif" width="100%" alt="HOI4D Depth">
-        <br><b>HOI4D 鈥?Depth Rendering</b>
+        <br><b>HOI4D &mdash; Depth Rendering</b>
       </td>
     </tr>
     <tr>
       <td align="center">
         <img src="https://github.com/HaoTian23UCAS/Interaction-Aware-Gau/raw/master/docs/static/media/3dwave_rgb.gif" width="100%" alt="3D Wave RGB">
-        <br><b>3D Wave 鈥?RGB Rendering</b>
+        <br><b>3D Wave &mdash; RGB Rendering</b>
       </td>
       <td align="center">
         <img src="https://github.com/HaoTian23UCAS/Interaction-Aware-Gau/raw/master/docs/static/media/3dwave_depth.gif" width="100%" alt="3D Wave Depth">
-        <br><b>3D Wave 鈥?Depth Rendering</b>
+        <br><b>3D Wave &mdash; Depth Rendering</b>
       </td>
     </tr>
   </table>
@@ -60,7 +66,7 @@
   <br><b>Free-Viewpoint Translation</b>
 
   <br><br>
-  馃幀 Full presentation video: <a href="https://haotian23ucas.github.io/Interaction-Aware-Gau/#video">Project Page 鈫?Video</a>
+  Full presentation video: <a href="https://haotian23ucas.github.io/Interaction-Aware-Gau/#video">Project Page &rarr; Video</a>
 </div>
 
 ---
@@ -103,13 +109,13 @@ pip install -r requirements.txt
 
 ## Dataset
 
-We evaluate on [HOI4D](https://hoi4d.github.io/) and HOID datasets.
+We evaluate on [HOI4D](https://hoi4d.github.io/) and HO3D datasets.
 
 Download and place data under `data/`:
 ```
 data/
   HOI4D/
-  HOID/
+  HO3D/
 ```
 
 ---
@@ -150,6 +156,3 @@ python eval.py --model_path output/scene1 --source_path data/HOI4D/scene1
 ## Acknowledgements
 
 This project builds upon [3D Gaussian Splatting](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/), [Deformable 3D Gaussians](https://github.com/ingra14m/Deformable-3D-Gaussians), and [SC-GS](https://github.com/yihua7/SC-GS). We thank the authors for their excellent work.
-
-
-
