@@ -8,11 +8,13 @@
 Chenyangguang Zhang<sup>3</sup> &middot;
 Rui Liu<sup>4</sup> &middot;
 Wen Shen<sup>1,5</sup> &middot;
-Xiaolin Qin<sup>1,5</sup>
+Xiaolin Qin<sup>1,5 *</sup>
+
+<sup>*</sup> Corresponding author
 
 <sup>1</sup>Chengdu Institute of Computer Applications, CAS &nbsp;&middot;&nbsp;
-<sup>2</sup>PetroChina Digital Intelligence Research Institute &nbsp;&middot;&nbsp;
-<sup>3</sup>Tsinghua University<br>
+<sup>2</sup>PetroChina Digital Intelligence Research Institute<br>
+<sup>3</sup>Tsinghua University &nbsp;&middot;&nbsp;
 <sup>4</sup>Minzu University of China &nbsp;&middot;&nbsp;
 <sup>5</sup>University of Chinese Academy of Sciences
 
