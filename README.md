@@ -8,7 +8,7 @@
 Chenyangguang Zhang<sup>3</sup> &middot;
 Rui Liu<sup>4</sup> &middot;
 Wen Shen<sup>1,5</sup> &middot;
-Xiaolin Qin<sup>1,5</sup>&#10022;
+Xiaolin Qin<sup>1,5</sup>
 
 <sup>1</sup>Chengdu Institute of Computer Applications, CAS &nbsp;&middot;&nbsp;
 <sup>2</sup>PetroChina Digital Intelligence Research Institute &nbsp;&middot;&nbsp;
@@ -29,7 +29,7 @@ Xiaolin Qin<sup>1,5</sup>&#10022;
 ## Pipeline
 
 <div align="center">
-  <img src="https://github.com/HaoTian23UCAS/Interaction-Aware-Gau/raw/master/docs/static/images/pipeline_final.png" width="100%" alt="Pipeline">
+  <img src="https://github.com/JasonTian1091/Interaction-Aware-Gau/raw/main/docs/static/images/pipeline_final.png" width="100%" alt="Pipeline">
 </div>
 
 > Hand Gaussians and Object Gaussians are each driven by dedicated neural deformation fields, coupled through **Interaction-Aware Parameters**. All components are composited with Background Gaussians and supervised by rendering, alpha, interaction, translation, and rotation losses.
@@ -42,27 +42,27 @@ Xiaolin Qin<sup>1,5</sup>&#10022;
   <table>
     <tr>
       <td align="center">
-        <img src="https://github.com/HaoTian23UCAS/Interaction-Aware-Gau/raw/master/docs/static/media/hoi4d_rgb.gif" width="100%" alt="HOI4D RGB">
+        <img src="https://github.com/JasonTian1091/Interaction-Aware-Gau/raw/main/docs/static/media/hoi4d_rgb.gif" width="100%" alt="HOI4D RGB">
         <br><b>HOI4D &mdash; RGB Rendering</b>
       </td>
       <td align="center">
-        <img src="https://github.com/HaoTian23UCAS/Interaction-Aware-Gau/raw/master/docs/static/media/hoi4d_depth.gif" width="100%" alt="HOI4D Depth">
+        <img src="https://github.com/JasonTian1091/Interaction-Aware-Gau/raw/main/docs/static/media/hoi4d_depth.gif" width="100%" alt="HOI4D Depth">
         <br><b>HOI4D &mdash; Depth Rendering</b>
       </td>
     </tr>
     <tr>
       <td align="center">
-        <img src="https://github.com/HaoTian23UCAS/Interaction-Aware-Gau/raw/master/docs/static/media/3dwave_rgb.gif" width="100%" alt="3D Wave RGB">
+        <img src="https://github.com/JasonTian1091/Interaction-Aware-Gau/raw/main/docs/static/media/3dwave_rgb.gif" width="100%" alt="3D Wave RGB">
         <br><b>3D Wave &mdash; RGB Rendering</b>
       </td>
       <td align="center">
-        <img src="https://github.com/HaoTian23UCAS/Interaction-Aware-Gau/raw/master/docs/static/media/3dwave_depth.gif" width="100%" alt="3D Wave Depth">
+        <img src="https://github.com/JasonTian1091/Interaction-Aware-Gau/raw/main/docs/static/media/3dwave_depth.gif" width="100%" alt="3D Wave Depth">
         <br><b>3D Wave &mdash; Depth Rendering</b>
       </td>
     </tr>
   </table>
 
-  <img src="https://github.com/HaoTian23UCAS/Interaction-Aware-Gau/raw/master/docs/static/media/transl.gif" width="50%" alt="Translation">
+  <img src="https://github.com/JasonTian1091/Interaction-Aware-Gau/raw/main/docs/static/media/transl.gif" width="50%" alt="Translation">
   <br><b>Free-Viewpoint Translation</b>
 
   <br><br>
@@ -74,7 +74,7 @@ Xiaolin Qin<sup>1,5</sup>&#10022;
 ## Qualitative Comparison
 
 <div align="center">
-  <img src="https://github.com/HaoTian23UCAS/Interaction-Aware-Gau/raw/master/docs/static/images/qualitative_comparison.png" width="100%" alt="Qualitative Comparison on HOI4D, HO3D, HOLD">
+  <img src="https://github.com/JasonTian1091/Interaction-Aware-Gau/raw/main/docs/static/images/qualitative_comparison.png" width="100%" alt="Qualitative Comparison on HOI4D, HO3D, HOLD">
 </div>
 
 > Comparison against GT, 4DGS, Deform3DGS, and SC-GS on **HOI4D** (top), **HO3D** (middle), and **HOLD vs. Ours on HO3D** (bottom). Our method consistently produces sharper textures and more accurate hand-object boundaries.
@@ -97,7 +97,7 @@ Experiments show state-of-the-art performance on dynamic hand-object interaction
 ## Installation
 
 ```bash
-git clone https://github.com/HaoTian23UCAS/Interaction-Aware-Gau.git
+git clone https://github.com/JasonTian1091/Interaction-Aware-Gau.git
 cd Interaction-Aware-Gau
 
 conda create -n ia4dgs python=3.8
