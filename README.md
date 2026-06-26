@@ -1,18 +1,20 @@
-<div align="center">
+﻿<div align="center">
+
+> 馃寪 **Project Page with videos and full results 鈫?[haotian23ucas.github.io/Interaction-Aware-Gau](https://haotian23ucas.github.io/Interaction-Aware-Gau/)**
 
 # Interaction-Aware 4D Gaussian Splatting for Dynamic Hand-Object Interaction Reconstruction
 
 **ECCV 2026**
 
-[Hao Tian](https://github.com/JasonTian1091)<sup>1,2,5</sup> · Chenyangguang Zhang<sup>3</sup> · Rui Liu<sup>4</sup> · Wen Shen<sup>1,5</sup> · Xiaolin Qin<sup>1,5✉</sup>
+[Hao Tian](https://github.com/HaoTian23UCAS)<sup>1,2,5</sup> 路 Chenyangguang Zhang<sup>3</sup> 路 Rui Liu<sup>4</sup> 路 Wen Shen<sup>1,5</sup> 路 Xiaolin Qin<sup>1,5鉁?/sup>
 
-<sup>1</sup>Chengdu Institute of Computer Applications, CAS · <sup>2</sup>PetroChina Digital Intelligence Research Institute · <sup>3</sup>Tsinghua University · <sup>4</sup>Minzu University of China · <sup>5</sup>University of Chinese Academy of Sciences
+<sup>1</sup>Chengdu Institute of Computer Applications, CAS 路 <sup>2</sup>PetroChina Digital Intelligence Research Institute 路 <sup>3</sup>Tsinghua University 路 <sup>4</sup>Minzu University of China 路 <sup>5</sup>University of Chinese Academy of Sciences
 
-[![Project Page](https://img.shields.io/badge/🌐%20Project-Page-blue?style=for-the-badge)](https://jasontian1091.github.io/Interaction-Aware-Gau-page/)
-[![Paper](https://img.shields.io/badge/📄%20Paper-ECCV%202026-red?style=for-the-badge)](https://jasontian1091.github.io/Interaction-Aware-Gau-page/)
+[![Project Page](https://img.shields.io/badge/馃寪%20Project-Page-blue?style=for-the-badge)](https://haotian23ucas.github.io/Interaction-Aware-Gau/)
+[![Paper](https://img.shields.io/badge/馃搫%20Paper-ECCV%202026-red?style=for-the-badge)](https://haotian23ucas.github.io/Interaction-Aware-Gau/)
 [![arXiv](https://img.shields.io/badge/arXiv-coming%20soon-b31b1b?style=for-the-badge&logo=arxiv)](https://arxiv.org)
 
-### 🌐 [Project Page](https://jasontian1091.github.io/Interaction-Aware-Gau-page/) | 📄 [Paper](#bibtex) | 🎬 [Video](https://jasontian1091.github.io/Interaction-Aware-Gau-page/#video)
+### 馃寪 [Project Page](https://haotian23ucas.github.io/Interaction-Aware-Gau/) | 馃搫 [Paper](#bibtex) | 馃幀 [Video](https://haotian23ucas.github.io/Interaction-Aware-Gau/#video)
 
 </div>
 
@@ -21,7 +23,7 @@
 ## Pipeline
 
 <div align="center">
-  <img src="https://github.com/JasonTian1091/Interaction-Aware-Gau-page/raw/master/static/images/pipeline_final.png" width="100%" alt="Pipeline">
+  <img src="https://github.com/HaoTian23UCAS/Interaction-Aware-Gau/raw/master/docs/static/images/pipeline_final.png" width="100%" alt="Pipeline">
 </div>
 
 > Hand Gaussians and Object Gaussians are each driven by dedicated neural deformation fields, coupled through **Interaction-Aware Parameters**. All components are composited with Background Gaussians and supervised by rendering, alpha, interaction, translation, and rotation losses.
@@ -34,32 +36,42 @@
   <table>
     <tr>
       <td align="center">
-        <img src="https://github.com/JasonTian1091/Interaction-Aware-Gau-page/raw/master/static/media/hoi4d_rgb.gif" width="100%" alt="HOI4D RGB">
-        <br><b>HOI4D — RGB Rendering</b>
+        <img src="https://github.com/HaoTian23UCAS/Interaction-Aware-Gau/raw/master/docs/static/media/hoi4d_rgb.gif" width="100%" alt="HOI4D RGB">
+        <br><b>HOI4D 鈥?RGB Rendering</b>
       </td>
       <td align="center">
-        <img src="https://github.com/JasonTian1091/Interaction-Aware-Gau-page/raw/master/static/media/hoi4d_depth.gif" width="100%" alt="HOI4D Depth">
-        <br><b>HOI4D — Depth Rendering</b>
+        <img src="https://github.com/HaoTian23UCAS/Interaction-Aware-Gau/raw/master/docs/static/media/hoi4d_depth.gif" width="100%" alt="HOI4D Depth">
+        <br><b>HOI4D 鈥?Depth Rendering</b>
       </td>
     </tr>
     <tr>
       <td align="center">
-        <img src="https://github.com/JasonTian1091/Interaction-Aware-Gau-page/raw/master/static/media/3dwave_rgb.gif" width="100%" alt="3D Wave RGB">
-        <br><b>3D Wave — RGB Rendering</b>
+        <img src="https://github.com/HaoTian23UCAS/Interaction-Aware-Gau/raw/master/docs/static/media/3dwave_rgb.gif" width="100%" alt="3D Wave RGB">
+        <br><b>3D Wave 鈥?RGB Rendering</b>
       </td>
       <td align="center">
-        <img src="https://github.com/JasonTian1091/Interaction-Aware-Gau-page/raw/master/static/media/3dwave_depth.gif" width="100%" alt="3D Wave Depth">
-        <br><b>3D Wave — Depth Rendering</b>
+        <img src="https://github.com/HaoTian23UCAS/Interaction-Aware-Gau/raw/master/docs/static/media/3dwave_depth.gif" width="100%" alt="3D Wave Depth">
+        <br><b>3D Wave 鈥?Depth Rendering</b>
       </td>
     </tr>
   </table>
 
-  <img src="https://github.com/JasonTian1091/Interaction-Aware-Gau-page/raw/master/static/media/transl.gif" width="50%" alt="Translation">
+  <img src="https://github.com/HaoTian23UCAS/Interaction-Aware-Gau/raw/master/docs/static/media/transl.gif" width="50%" alt="Translation">
   <br><b>Free-Viewpoint Translation</b>
 
   <br><br>
-  🎬 Full presentation video: <a href="https://jasontian1091.github.io/Interaction-Aware-Gau-page/#video">Project Page → Video</a>
+  馃幀 Full presentation video: <a href="https://haotian23ucas.github.io/Interaction-Aware-Gau/#video">Project Page 鈫?Video</a>
 </div>
+
+---
+
+## Qualitative Comparison
+
+<div align="center">
+  <img src="https://github.com/HaoTian23UCAS/Interaction-Aware-Gau/raw/master/docs/static/images/qualitative_comparison.png" width="100%" alt="Qualitative Comparison on HOI4D, HO3D, HOLD">
+</div>
+
+> Comparison against GT, 4DGS, Deform3DGS, and SC-GS on **HOI4D** (top), **HO3D** (middle), and **HOLD vs. Ours on HO3D** (bottom). Our method consistently produces sharper textures and more accurate hand-object boundaries.
 
 ---
 
@@ -79,7 +91,7 @@ Experiments show state-of-the-art performance on dynamic hand-object interaction
 ## Installation
 
 ```bash
-git clone https://github.com/JasonTian1091/Interaction-Aware-Gau.git
+git clone https://github.com/HaoTian23UCAS/Interaction-Aware-Gau.git
 cd Interaction-Aware-Gau
 
 conda create -n ia4dgs python=3.8
@@ -138,3 +150,6 @@ python eval.py --model_path output/scene1 --source_path data/HOI4D/scene1
 ## Acknowledgements
 
 This project builds upon [3D Gaussian Splatting](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/), [Deformable 3D Gaussians](https://github.com/ingra14m/Deformable-3D-Gaussians), and [SC-GS](https://github.com/yihua7/SC-GS). We thank the authors for their excellent work.
+
+
+
