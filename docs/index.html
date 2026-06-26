@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interaction-Aware 4D Gaussian Splatting for Dynamic Hand-Object Interaction Reconstruction - ECCV 2026">
+  <title>Interaction-Aware 4D Gaussian Splatting</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Bulma -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+  <!-- Font Awesome & Academicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <style>
+    :root {
+      --blue:   #3a7bd5;
+      --indigo: #4f5bd5;
+      --accent: #e8a838;
+      --bg-alt: #f7f8fc;
+      --text:   #2c2c2c;
+      --muted:  #666;
+      --radius: 10px;
+      --shadow: 0 4px 18px rgba(0,0,0,.10);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      color: var(--text);
+      background: #fff;
+    }
+
+    /* ---- HERO ---- */
+    .hero-section {
+      background: linear-gradient(160deg, #f0f4ff 0%, #ffffff 60%);
+      padding: 4rem 1.5rem 2rem;
+      text-align: center;
+    }
+
+    .conf-badge {
+      display: inline-block;
+      background: var(--blue);
+      color: #fff;
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 700;
+      font-size: .9rem;
+      letter-spacing: .06em;
+      padding: .35rem 1rem;
+      border-radius: 20px;
+      margin-bottom: 1.2rem;
+    }
+
+    .pub-title {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 2.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      max-width: 820px;
+      margin: 0 auto .6rem;
+    }
+
+    .pub-authors {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 1.08rem;
+      margin: .9rem 0 .5rem;
+    }
+
+    .pub-authors a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+    .pub-authors a:hover { text-decoration: underline; }
+
+    sup { font-size: .7em; }
+
+    .affiliations {
+      font-size: .88rem;
+      color: var(--muted);
+      max-width: 720px;
+      margin: .4rem auto 1.4rem;
+      line-height: 1.7;
+    }
+
+    /* ---- BUTTONS ---- */
+    .btn-row { display: flex; flex-wrap: wrap; justify-content: center; gap: .55rem; margin-top: 1rem; }
+
+    .btn-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      padding: .5rem 1.2rem;
+      border-radius: 30px;
+      border: 2px solid #2c2c2c;
+      color: #2c2c2c;
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 500;
+      font-size: .92rem;
+      text-decoration: none;
+      transition: background .2s, color .2s;
+    }
+    .btn-link:hover { background: #2c2c2c; color: #fff; }
+
+    /* ---- SECTIONS ---- */
+    .page-section { padding: 3.5rem 1.5rem; }
+    .page-section.alt-bg { background: var(--bg-alt); }
+
+    .section-title {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 1.8rem;
+      position: relative;
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 56px;
+      height: 3px;
+      background: var(--blue);
+      margin: .55rem auto 0;
+      border-radius: 2px;
+    }
+
+    .content-wrap { max-width: 900px; margin: 0 auto; }
+
+    /* ---- ABSTRACT ---- */
+    .abstract-text {
+      font-size: 1.02rem;
+      line-height: 1.9;
+      text-align: justify;
+    }
+
+    /* ---- FIGURES ---- */
+    .fig-box {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: block;
+      width: 100%;
+    }
+    .fig-box img { width: 100%; display: block; }
+
+    .fig-caption {
+      text-align: center;
+      color: var(--muted);
+      font-size: .9rem;
+      margin-top: .75rem;
+      line-height: 1.6;
+    }
+
+    /* ---- VIDEO ---- */
+    .video-wrap {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .video-wrap video { display: block; width: 100%; }
+
+    /* ---- KEY CARDS ---- */
+    .key-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 2.2rem; }
+    @media (max-width: 600px) { .key-cards { grid-template-columns: 1fr; } }
+
+    .key-card {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: 0 2px 10px rgba(0,0,0,.07);
+      padding: 1.3rem 1.4rem;
+      border-top: 3px solid var(--blue);
+    }
+    .key-card h4 {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--blue);
+      margin-bottom: .55rem;
+    }
+    .key-card p { font-size: .92rem; line-height: 1.7; color: #444; margin: 0; }
+
+    /* ---- GIF GRID ---- */
+    .gif-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+    @media (max-width: 600px) { .gif-grid { grid-template-columns: 1fr; } }
+
+    .gif-item img { width: 100%; border-radius: var(--radius); box-shadow: var(--shadow); display: block; }
+    .gif-label { text-align: center; font-size: .88rem; color: var(--muted); margin-top: .4rem; }
+
+    /* ---- BIBTEX ---- */
+    .bibtex-block {
+      background: #1e1e2e;
+      color: #cdd6f4;
+      border-radius: var(--radius);
+      padding: 1.6rem;
+      font-family: 'Courier New', monospace;
+      font-size: .84rem;
+      line-height: 1.7;
+      overflow-x: auto;
+      white-space: pre;
+      text-align: left;
+      box-shadow: var(--shadow);
+    }
+    .bibtex-copy-btn {
+      display: block;
+      margin: .8rem 0 0 auto;
+      padding: .4rem 1rem;
+      border: none;
+      border-radius: 20px;
+      background: var(--blue);
+      color: #fff;
+      font-size: .85rem;
+      cursor: pointer;
+    }
+    .bibtex-copy-btn:hover { opacity: .85; }
+
+    /* ---- FOOTER ---- */
+    .site-footer {
+      background: #23232e;
+      color: #aaa;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: .88rem;
+    }
+    .site-footer a { color: #7eb8f7; text-decoration: none; }
+    .site-footer a:hover { text-decoration: underline; }
+
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+
+<body>
+
+<!-- ═══════════════════════════════════════════════════════ HERO -->
+<header class="hero-section">
+  <div>
+    <span class="conf-badge">ECCV 2026</span>
+  </div>
+
+  <h1 class="pub-title">
+    Interaction-Aware 4D Gaussian Splatting for<br>
+    Dynamic Hand-Object Interaction Reconstruction
+  </h1>
+
+  <div class="pub-authors">
+    <a href="#">Hao Tian</a><sup>1,2,5</sup>&nbsp;&nbsp;
+    <a href="#">Chenyangguang Zhang</a><sup>3</sup>&nbsp;&nbsp;
+    <a href="#">Rui Liu</a><sup>4</sup>&nbsp;&nbsp;
+    <a href="#">Wen Shen</a><sup>1,5</sup>&nbsp;&nbsp;
+    <a href="#">Xiaolin Qin</a><sup>1,5&#9993;</sup>
+  </div>
+
+  <p class="affiliations">
+    <sup>1</sup> Chengdu Institute of Computer Applications, Chinese Academy of Sciences &nbsp;
+    <sup>2</sup> PetroChina (Beijing) Digital Intelligence Research Institute &nbsp;
+    <sup>3</sup> Tsinghua University<br>
+    <sup>4</sup> Minzu University of China &nbsp;
+    <sup>5</sup> University of Chinese Academy of Sciences
+  </p>
+
+  <div class="btn-row">
+    <a href="#" class="btn-link">
+      <i class="fas fa-file-pdf"></i> Paper
+    </a>
+    <a href="#" class="btn-link">
+      <i class="ai ai-arxiv"></i> arXiv
+    </a>
+    <a href="https://github.com/JasonTian1091/Interaction-Aware-Gau" class="btn-link">
+      <i class="fab fa-github"></i> Code
+    </a>
+    <a href="#video" class="btn-link">
+      <i class="fas fa-play-circle"></i> Video
+    </a>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════ TEASER -->
+<section class="page-section">
+  <div class="content-wrap">
+    <a class="fig-box" href="./static/images/teaser_modified_final_zip.png" target="_blank">
+      <img src="./static/images/teaser_modified_final_zip.png"
+           alt="Teaser: previous methods vs. ours on HOI reconstruction">
+    </a>
+    <p class="fig-caption">
+      <b>Figure 1.</b> Previous methods rely on a single implicit deformation field with only 2D rendering supervision,
+      leading to blurry and inconsistent reconstructions. Our <em>Interaction-Aware 4D-GS</em> introduces
+      separate Hand / Object deformation fields coupled by explicit interaction parameters and 2D&amp;3D
+      joint supervision, yielding sharper, physically plausible results.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ ABSTRACT -->
+<section class="page-section alt-bg" id="abstract">
+  <div class="content-wrap">
+    <h2 class="section-title">Abstract</h2>
+    <p class="abstract-text">
+      This paper focuses on a challenging setting of simultaneously modeling geometry and
+      appearance of hand-object interaction scenes <strong>without any object priors</strong>.
+      We follow the trend of dynamic 3D Gaussian Splatting based methods, and address several
+      significant challenges.
+      To model complex hand-object interaction with mutual occlusion and edge blur, we present
+      <strong>interaction-aware hand-object Gaussians</strong> with newly introduced optimizable
+      parameters aiming to adopt a piecewise linear hypothesis for clearer structural
+      representation.
+      Moreover, considering the complementarity and tightness of hand shape and object shape
+      during interaction dynamics, we incorporate hand information into the object deformation
+      field, constructing <strong>interaction-aware dynamic fields</strong> to model flexible
+      motions.
+      To further address difficulties in the optimization process, we propose a
+      <strong>progressive strategy</strong> that handles dynamic regions and static background
+      step by step.
+      Correspondingly, explicit regularizations are designed to stabilize the hand-object
+      representations for smooth motion transition, physical interaction reality, and coherent
+      lighting.
+      Experiments show that our approach surpasses existing dynamic 3D-GS-based methods and
+      achieves <strong>state-of-the-art</strong> performance in reconstructing dynamic
+      hand-object interaction.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ VIDEO -->
+<section class="page-section" id="video">
+  <div class="content-wrap">
+    <h2 class="section-title">Presentation Video</h2>
+    <div class="video-wrap">
+      <video controls muted loop playsinline autoplay>
+        <source src="./static/media/presentation.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ METHOD -->
+<section class="page-section alt-bg" id="method">
+  <div class="content-wrap">
+    <h2 class="section-title">Method</h2>
+
+    <div class="fig-box">
+      <img src="./static/images/pipeline_final.png"
+           alt="Pipeline of Interaction-Aware 4D Gaussian Splatting">
+    </div>
+    <p class="fig-caption">
+      <b>Figure 2. Pipeline overview.</b> Hand Gaussians and Object Gaussians are separately fed into
+      their neural deformation fields (Hand Field / Object Field) parameterized by position encoding
+      &#947;(&#961;), rotation <em>R</em>, and timestamp <em>t</em>. Interaction-Aware Parameters
+      couple the two streams. Deformed Gaussians are composited with Background Gaussians and
+      rasterized. Supervision comes from five losses: &#8466;<sub>render</sub>, &#8466;<sub>&#945;</sub>,
+      &#8466;<sub>interaction</sub>, &#8466;<sup>H</sup><sub>trans</sub>, &#8466;<sup>O</sup><sub>rot</sub>.
+    </p>
+
+    <div class="key-cards">
+      <div class="key-card">
+        <h4>&#128080; Interaction-Aware Parameters</h4>
+        <p>Each Gaussian carries a learnable weight <em>w</em> (interaction strength) and radius <em>o</em>
+        (influence extent). These parameters let the hand and object fields communicate
+        without explicit contact labeling, naturally capturing near-contact and in-contact dynamics.</p>
+      </div>
+      <div class="key-card">
+        <h4>&#127952; Dual Neural Deformation Fields</h4>
+        <p>Separate Hand Field and Object Field each take position-encoded Gaussian centers,
+        rotations, and timestamps, and output per-Gaussian deformation offsets.
+        Decoupled fields prevent entanglement while the interaction loss enforces consistency at boundaries.</p>
+      </div>
+      <div class="key-card">
+        <h4>&#127919; 2D &amp; 3D Joint Supervision</h4>
+        <p>Beyond standard photometric and alpha losses, we add 3D geometric constraints:
+        a hand translation loss guides absolute hand position, and an object rotation loss leverages
+        MANO average-rotation priors, substantially reducing degenerate solutions.</p>
+      </div>
+      <div class="key-card">
+        <h4>&#127775; Background Disentanglement</h4>
+        <p>A dedicated Background Gaussian set is maintained separately and composited
+        during rasterization. This enables clean decomposed rendering — hand, object, and
+        scene can be visualized or rendered independently without re-training.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ DECOMPOSED -->
+<section class="page-section" id="decompose">
+  <div class="content-wrap">
+    <h2 class="section-title">Decomposed Rendering</h2>
+    <div class="fig-box">
+      <img src="./static/images/decompose_rendering.png"
+           alt="Decomposed rendering: canonical, target, background">
+    </div>
+    <p class="fig-caption">
+      <b>Figure 3.</b> Our Gaussian representation supports explicit decomposition.
+      From top to bottom: Ground-truth frames, canonical-space rendering,
+      target-space rendering (after deformation), and background-only rendering.
+      The clean separation enables downstream analysis and virtual object insertion.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ QUALITATIVE -->
+<section class="page-section alt-bg" id="results">
+  <div class="content-wrap">
+    <h2 class="section-title">Qualitative Comparison</h2>
+    <div class="fig-box">
+      <img src="./static/images/qualitative.png"
+           alt="Qualitative comparison on HOID and HOI4D vs 4DGS, Deform3DGS, SC-GS">
+    </div>
+    <p class="fig-caption">
+      <b>Figure 4.</b> Qualitative comparison on HOID (rows 1–3) and HOI4D (rows 4–6) scenes
+      against GT, 4DGS, Deform3DGS, and SC-GS. Our method produces sharper object textures,
+      more accurate hand geometry, and fewer ghosting artifacts — especially in high-motion frames.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ GIF DEMOS -->
+<section class="page-section" id="demos">
+  <div class="content-wrap">
+    <h2 class="section-title">Novel View Synthesis</h2>
+    <p style="text-align:center; color:var(--muted); margin-bottom:1.5rem; font-size:.95rem;">
+      Real-time rendering from our trained 4D Gaussian representation across multiple sequences.
+    </p>
+
+    <div class="gif-grid">
+      <div class="gif-item">
+        <img src="./static/media/hoi4d_rgb.gif" alt="HOI4D RGB novel view">
+        <p class="gif-label">HOI4D &mdash; RGB Rendering</p>
+      </div>
+      <div class="gif-item">
+        <img src="./static/media/hoi4d_depth.gif" alt="HOI4D Depth novel view">
+        <p class="gif-label">HOI4D &mdash; Depth Rendering</p>
+      </div>
+      <div class="gif-item">
+        <img src="./static/media/3dwave_rgb.gif" alt="3D Wave RGB novel view">
+        <p class="gif-label">3D Wave &mdash; RGB Rendering</p>
+      </div>
+      <div class="gif-item">
+        <img src="./static/media/3dwave_depth.gif" alt="3D Wave Depth novel view">
+        <p class="gif-label">3D Wave &mdash; Depth Rendering</p>
+      </div>
+    </div>
+
+    <div style="max-width:450px; margin:1.2rem auto 0;">
+      <div class="gif-item">
+        <img src="./static/media/transl.gif" alt="Translation sequence">
+        <p class="gif-label">Free-Viewpoint Translation</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ BIBTEX -->
+<section class="page-section alt-bg" id="citation">
+  <div class="content-wrap">
+    <h2 class="section-title">BibTeX</h2>
+    <div class="bibtex-block" id="bibtex-text">@inproceedings{tian2026interactionaware,
+  title     = {Interaction-Aware 4D Gaussian Splatting for Dynamic Hand-Object Interaction Reconstruction},
+  author    = {Tian, Hao and Zhang, Chenyangguang and Liu, Rui and Shen, Wen and Qin, Xiaolin},
+  booktitle = {Proceedings of the European Conference on Computer Vision (ECCV)},
+  year      = {2026}
+}</div>
+    <button class="bibtex-copy-btn" onclick="copyBibtex()">
+      <i class="far fa-copy"></i> Copy BibTeX
+    </button>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ FOOTER -->
+<footer class="site-footer">
+  <p>
+    Website template adapted from
+    <a href="https://nerfies.github.io" target="_blank">Nerfies</a>.
+    We thank the authors for making it open source.
+  </p>
+  <p style="margin-top:.5rem;">
+    <a href="https://github.com/JasonTian1091/Interaction-Aware-Gau" target="_blank">
+      <i class="fab fa-github"></i> GitHub Repository
+    </a>
+    &nbsp;|&nbsp;
+    Contact: Xiaolin Qin (Corresponding Author)
+  </p>
+</footer>
+
+<script>
+  function copyBibtex() {
+    const text = document.getElementById('bibtex-text').innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.querySelector('.bibtex-copy-btn');
+      btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+      setTimeout(() => { btn.innerHTML = '<i class="far fa-copy"></i> Copy BibTeX'; }, 2000);
+    });
+  }
+</script>
+
+</body>
+</html>
