@@ -20,7 +20,7 @@ Xiaolin Qin<sup>1,5 *</sup>
 
 [![Project Page](https://img.shields.io/badge/Project-Page-blue?style=for-the-badge&logo=github)](https://haotian23ucas.github.io/Interaction-Aware-Gau/)
 [![Paper](https://img.shields.io/badge/Paper-ECCV_2026-red?style=for-the-badge)](https://haotian23ucas.github.io/Interaction-Aware-Gau/)
-[![arXiv](https://img.shields.io/badge/arXiv-b31b1b?style=for-the-badge&logo=arxiv)]([[https://arxiv.org](https://arxiv.org/abs/2511.14540)](https://arxiv.org/abs/2511.14540))
+[![arXiv](https://img.shields.io/badge/arXiv-b31b1b?style=for-the-badge&logo=arxiv)](https://arxiv.org/abs/2511.14540)
 
 **[Project Page](https://haotian23ucas.github.io/Interaction-Aware-Gau/) &nbsp;|&nbsp; [Paper](#bibtex) &nbsp;|&nbsp; [Video](https://haotian23ucas.github.io/Interaction-Aware-Gau/#video)**
 
