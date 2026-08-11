@@ -145,11 +145,15 @@ python eval.py --model_path output/scene1 --source_path data/HOI4D/scene1
 ## BibTeX
 
 ```bibtex
-@inproceedings{tian2026interactionaware,
-  title     = {Interaction-Aware 4D Gaussian Splatting for Dynamic Hand-Object Interaction Reconstruction},
-  author    = {Tian, Hao and Zhang, Chenyangguang and Liu, Rui and Shen, Wen and Qin, Xiaolin},
-  booktitle = {Proceedings of the European Conference on Computer Vision (ECCV)},
-  year      = {2026}
+ECCV......
+@misc{tian2026interactionaware4dgaussiansplatting,
+      title={Interaction-Aware 4D Gaussian Splatting for Dynamic Hand-Object Interaction Reconstruction}, 
+      author={Hao Tian and Chenyangguang Zhang and Rui Liu and Wen Shen and Xiaolin Qin},
+      year={2026},
+      eprint={2511.14540},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2511.14540}, 
 }
 ```
 
