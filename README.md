@@ -2,7 +2,7 @@
 
 # Interaction-Aware 4D Gaussian Splatting for Dynamic Hand-Object Interaction Reconstruction
 
-**ECCV 2026**
+**ECCV 2026 (Oral)**
 
 [Hao Tian](https://github.com/HaoTian23UCAS)<sup>1,2,5</sup> &middot;
 Chenyangguang Zhang<sup>3</sup> &middot;
