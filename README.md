@@ -111,7 +111,7 @@ pip install -r requirements.txt
 
 ## Dataset
 
-We evaluate on [HOI4D](https://hoi4d.github.io/) and HO3D datasets.
+We use a single RTX 3090(24G) to evaluate on [HOI4D](https://hoi4d.github.io/) and HO3D datasets.
 
 Download and place data under `data/`:
 ```
